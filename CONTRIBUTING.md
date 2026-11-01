@@ -4,6 +4,12 @@ Danke für dein Interesse, Pyti zu verbessern! Willkommen sind Fehlerberichte,
 Ideen, Verbesserungen an der Dokumentation, neue Lernaufgaben und
 Codebeiträge.
 
+Für einen ersten Beitrag kannst du ein Issue mit dem Label
+[`good first issue`](https://github.com/heddes-python-dev/pyti_lernumgebung/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+auswählen. Kommentiere das Issue vor Beginn, damit klar ist, dass du daran
+arbeitest; stimme größere Änderungen bei Bedarf vorher mit den
+Maintainer:innen ab.
+
 Für Fehlerberichte und Funktionsideen gibt es im GitHub-Projekt passende
 Issue-Formulare. Bitte nutze diese Vorlagen und teile keine persönlichen oder
 sensiblen Daten. Sicherheitslücken mit ausnutzbaren Details gehören nicht in

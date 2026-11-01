@@ -17,8 +17,10 @@ Anfangsschritte, aber noch keine Freigabe für unbeaufsichtigten Schuleinsatz.
   Lernziele, unterstützte Systeme und aktuellen Projektstatus abstimmen.
 - [ ] Einen kurzen Screenshot oder eine Demo sowie einen schnellen
   Installations- und Startweg prominent anbieten.
-- [ ] Eine klare Anlaufstelle für Fehlerberichte, Ideen und Fragen benennen;
+- [x] Eine klare Anlaufstelle für Fehlerberichte, Ideen und Fragen benennen;
   auf Beiträge und Rückmeldungen zeitnah reagieren.
+- [x] Eine README-Sektion mit offenen `good first issue`-Aufgaben als Einstieg
+  für neue Mitwirkende pflegen.
 - [ ] Releases mit nachvollziehbaren Änderungen, getesteten Downloads und
   bekannten Einschränkungen pflegen.
 

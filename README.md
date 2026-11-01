@@ -83,6 +83,21 @@ sind willkommen. Nutze die Issues und Pull Requests des
 beschreibe bei Fehlern möglichst die Schritte zur Reproduktion, dein
 Betriebssystem und deine Python-Version.
 
+### Good First Issues
+
+Du möchtest mithelfen? Diese kleinen, klar abgegrenzten Aufgaben sind ein
+guter Einstieg. Auf GitHub findest du weitere Tickets mit dem Label
+[good first issue](https://github.com/heddes-python-dev/pyti_lernumgebung/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+
+- [Einsteigerübung zu Schleifen ergänzen](https://github.com/heddes-python-dev/pyti_lernumgebung/issues/2)
+- [Tastenkürzel zum Neustart des aktuellen Levels](https://github.com/heddes-python-dev/pyti_lernumgebung/issues/3)
+- [Fehlerdetails in die Zwischenablage kopieren](https://github.com/heddes-python-dev/pyti_lernumgebung/issues/4)
+- [Tests für deaktivierte Menüpunkte während der Skriptausführung](https://github.com/heddes-python-dev/pyti_lernumgebung/issues/5)
+
+Lies vor deinem Beitrag den [Leitfaden zum Mitwirken](CONTRIBUTING.md) und
+kommentiere das gewünschte Issue vor Beginn, damit andere sehen, dass du
+daran arbeitest.
+
 Die Schritte zum Forken, Einrichten, Erstellen eines Feature-Branches und
 Ausführen der Prüfungen stehen im [Leitfaden zum Mitwirken](CONTRIBUTING.md).
 
