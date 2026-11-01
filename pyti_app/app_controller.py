@@ -53,10 +53,10 @@ class PytiController:
             widgets.reset_button,
             widgets.editor,
             widgets.spielfeld_view,
-            widgets.beispiele_button,
-            widgets.admin_button,
-            widgets.creator_button,
-            widgets.about_button,
+            widgets.examples_action,
+            widgets.admin_action,
+            widgets.creator_action,
+            widgets.about_action,
         ]
         if widgets.start_button is not None:
             self.controls.append(widgets.start_button)

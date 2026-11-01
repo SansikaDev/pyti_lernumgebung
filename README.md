@@ -59,10 +59,20 @@ sind offene Entwicklungsziele; siehe [Roadmap](ROADMAP.md).
 - Lokales Admin-Panel für Statusprüfungen, Einstellungen, Level und Beispielskripte
 - Grafischer Level-Creator mit lokal gespeicherten Entwürfen und automatischer
   Übernahme in die Levelauswahl; Python-Quelltextexport zusätzlich verfügbar
+- Allgemeine Aktionen wie Beispiele, Administration und Projektinfo in der Menüleiste
 
 Die aktuelle [Logik- und Plausibilitätsprüfung](docs/LOGIKPRUEFUNG.md) fasst
 die Testergebnisse, bestätigten Befunde und priorisierten nächsten Schritte
 zusammen. Die offene Planung steht in [ROADMAP.md](ROADMAP.md).
+
+## Optionaler Pyti Inspector
+
+Der [Pyti Inspector](docs/INSPECTOR.md) ist ein eigenständiges externes
+Entwicklungswerkzeug für Live-Telemetrie. Er ist nicht Teil dieses
+Repositories oder der Pyti-Installation. Sein Launcher kann Pyti zur Laufzeit
+anbinden, ohne Pyti-Dateien zu verändern. Dazu müssen beide Programme separat
+vorliegen und mit demselben Python-Interpreter gestartet werden. Ohne den
+externen Launcher sendet Pyti keine Telemetrie.
 
 ## Mitmachen
 
@@ -257,11 +267,11 @@ Ungültige Leveländerungen, etwa ein unerreichbares Ziel, werden beim Speichern
 abgewiesen.
 
 Die Einstellungen werden im Benutzer-Konfigurationsordner der Plattform
-gespeichert und beim nächsten Start wieder geladen. Der Admin-Knopf hat
-absichtlich kein Passwort: Er ist für die Verwaltung der lokalen Installation
-gedacht und stellt keine Zugriffssicherung gegen andere Benutzer des Geräts
-dar. Skriptvorlagen können beliebigen Python-Code enthalten; auch sie sind
-nicht sandboxed.
+gespeichert und beim nächsten Start wieder geladen. Der Menüpunkt
+**Werkzeuge → Administration** hat absichtlich kein Passwort: Er ist für die
+Verwaltung der lokalen Installation gedacht und stellt keine
+Zugriffssicherung gegen andere Benutzer des Geräts dar. Skriptvorlagen können
+beliebigen Python-Code enthalten; auch sie sind nicht sandboxed.
 
 Fuer einen kurzen Smoke-Test kann der Prozess mit `timeout` beendet werden:
 

@@ -111,8 +111,8 @@ def _check_ui(widgets):
     required = (
         widgets.window, widgets.level_liste, widgets.editor,
         widgets.reset_button, widgets.stop_button, widgets.status,
-        widgets.spielfeld_view, widgets.creator_button,
-        widgets.admin_button, widgets.about_button,
+        widgets.spielfeld_view, widgets.creator_action,
+        widgets.admin_action, widgets.about_action,
     )
     if any(widget is None for widget in required):
         raise ValueError("Mindestens ein benötigtes UI-Element fehlt.")

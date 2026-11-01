@@ -1,14 +1,42 @@
 """Editing and export actions for level creator drafts."""
 
+from collections.abc import Collection
 from pathlib import Path
+from typing import TYPE_CHECKING, Any, Callable
 
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QFileDialog, QMessageBox
 
 from .level_creator_data import export_code, neuer_entwurf
 
+if TYPE_CHECKING:
+    from PySide6.QtWidgets import QComboBox, QLabel, QLineEdit
+
+    from .field_manager import SpielfeldManager
+    from .robot import Pyti
+
 
 class LevelCreatorActions:
+    if TYPE_CHECKING:
+        status: QLabel
+        mode: QComboBox
+        draft_list: QComboBox
+        name: QLineEdit
+        field: SpielfeldManager
+        robot: Pyti
+        drafts: list[dict[str, Any]]
+        active_index: int
+        loading: bool
+        persist_enabled: bool
+        register_level: Callable[[str, dict[str, Any]], str]
+        existing_level_keys: Callable[[], Collection[str]]
+
+        def _save_active(self) -> None: ...
+        def _snapshot(self) -> dict[str, Any]: ...
+        def _level_data(self, _: dict[str, Any]) -> dict[str, Any]: ...
+        def _load_draft(self, _: int) -> None: ...
+        def _persist(self) -> None: ...
+
     def _register(self):
         self._save_active()
         draft = self._snapshot()

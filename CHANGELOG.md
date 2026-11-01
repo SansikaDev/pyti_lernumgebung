@@ -2,6 +2,16 @@
 
 Alle bemerkenswerten Aenderungen dieses Projekts werden hier dokumentiert.
 
+## Unreleased
+
+### Verbessert
+
+- Allgemeine Aktionen sind in die Menüleiste verschoben; die Seitenleiste
+  bleibt auf Level, Editor und Ausführung fokussiert.
+- Dokumentation ergänzt die optionale Anbindung an den eigenständigen Pyti
+  Inspector, ohne eine Telemetrie-Abhängigkeit in die Pyti-Anwendung
+  aufzunehmen.
+
 ## [1.4.0] - 2026-10-26
 
 ### Hinzugefuegt

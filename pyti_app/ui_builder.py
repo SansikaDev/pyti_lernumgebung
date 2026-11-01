@@ -3,11 +3,14 @@
 from dataclasses import dataclass
 
 from PySide6.QtCore import QFile
+from PySide6.QtGui import QAction
 from PySide6.QtUiTools import QUiLoader
 from PySide6.QtWidgets import (
     QHBoxLayout,
     QLabel,
     QListWidget,
+    QMenu,
+    QMenuBar,
     QPushButton,
     QSizePolicy,
     QTextBrowser,
@@ -16,8 +19,8 @@ from PySide6.QtWidgets import (
 )
 
 from .editor import CodeEditor
-from .example_dialog import zeige_beispiele
 from .field_view import SpielfeldView
+from .ui_menus import baue_menues
 
 
 @dataclass
@@ -31,10 +34,12 @@ class PytiWidgets:
     status: QLabel
     mission: QLabel
     spielfeld_view: SpielfeldView
-    beispiele_button: QPushButton
-    admin_button: QPushButton
-    creator_button: QPushButton
-    about_button: QPushButton
+    menu_bar: QMenuBar
+    menus: tuple[QMenu, QMenu]
+    examples_action: QAction
+    admin_action: QAction
+    creator_action: QAction
+    about_action: QAction
 
 
 def lade_fenster(ui_pfad):
@@ -59,7 +64,14 @@ def baue_ui(basis_pfad, level_namen):
     alter_view.hide()
     alter_view.deleteLater()
 
-    haupt_layout = QHBoxLayout(window)
+    window_layout = QVBoxLayout(window)
+    window_layout.setContentsMargins(0, 0, 0, 0)
+    menu_bar, menus, actions = baue_menues(window, basis_pfad)
+    window_layout.setMenuBar(menu_bar)
+    content = QWidget(window)
+    window_layout.addWidget(content)
+
+    haupt_layout = QHBoxLayout(content)
     haupt_layout.setContentsMargins(20, 20, 20, 20)
     haupt_layout.setSpacing(16)
     feld_spalte = QWidget(window)
@@ -89,19 +101,6 @@ def baue_ui(basis_pfad, level_namen):
     sidebar.addWidget(editor, 1)
     sidebar.addWidget(_baue_hilfe(seitenleiste))
 
-    beispiele = QPushButton("Beispiele", seitenleiste)
-    beispiele.setToolTip("Öffnet das Pyti-Cookbook mit Beispielprogrammen")
-    sidebar.addWidget(beispiele)
-    beispiele.clicked.connect(lambda: zeige_beispiele(window, basis_pfad))
-    admin = QPushButton("Administration", seitenleiste)
-    admin.setToolTip("Systemstatus, Einstellungen und Level verwalten")
-    sidebar.addWidget(admin)
-    creator = QPushButton("Eigenes Level erstellen", seitenleiste)
-    creator.setToolTip("Level grafisch entwerfen und als Python-Datei exportieren")
-    sidebar.addWidget(creator)
-    about = QPushButton("Über Pyti", seitenleiste)
-    about.setToolTip("Projektinformationen, Mitwirkende und Sicherheitshinweise")
-    sidebar.addWidget(about)
     start_layout = QHBoxLayout()
     if start_button is not None:
         start_layout.addWidget(start_button)
@@ -129,7 +128,7 @@ def baue_ui(basis_pfad, level_namen):
     haupt_layout.addWidget(seitenleiste)
     return PytiWidgets(
         window, level_liste, editor, start_button, reset, stop, status,
-        mission, view, beispiele, admin, creator, about,
+        mission, view, menu_bar, menus, *actions,
     )
 
 

@@ -53,17 +53,17 @@ def hauptprogramm():
     controller.admin_settings = settings
     controller.admin_scripts = scripts
     version = (basis_pfad / "VERSION").read_text(encoding="utf-8").strip()
-    widgets.about_button.clicked.connect(
+    widgets.about_action.triggered.connect(
         lambda: erstelle_projektinfo_dialog(widgets.window, version).exec()
     )
-    widgets.admin_button.clicked.connect(
+    widgets.admin_action.triggered.connect(
         lambda: AdminPanel(
             store, controller, controller.admin_settings,
             controller.admin_scripts, version, store.load_error
         ).exec()
     )
     draft_path = config_pfad.parent / "level_creator_drafts.json"
-    widgets.creator_button.clicked.connect(
+    widgets.creator_action.triggered.connect(
         lambda: LevelCreatorDialog(
             draft_path,
             lambda name, level: register_custom_level(

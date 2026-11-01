@@ -18,6 +18,9 @@ ergänzte den grafischen Level-Creator und die verständliche Fehleranzeige.
 
 - `pyti_app/application.py` erstellt Qt-Objekte und verbindet Module.
 - `pyti_app/ui_builder.py` lädt `game_window.ui` und baut die Widgets.
+- `pyti_app/ui_menus.py` bündelt allgemeine Aktionen in den Menüs
+  `Werkzeuge` und `Hilfe`, getrennt von der auf die aktuelle Übung
+  ausgerichteten Seitenleiste.
 - `pyti_app/app_controller.py` steuert Levelwechsel, Level-Neustart, Start,
   Stopp und UI-Status.
 - `pyti_app/admin_panel.py` bündelt lokale Statusprüfungen, Einstellungen,
@@ -60,8 +63,16 @@ ergänzte den grafischen Level-Creator und die verständliche Fehleranzeige.
 ### `EXAMPLES.md`
 
 - Enthält optionale Beispielprogramme vom Einstieg bis zur objektorientierten Programmierung.
-- Wird nur auf Nachfrage über den Button `Beispiele` in einem separaten Dialog angezeigt.
+- Wird nur auf Nachfrage über `Werkzeuge → Beispiele` in einem separaten Dialog angezeigt.
 - Der Dialog liest die Datei relativ zu `main.py`; fehlt die Datei, bleibt die Anwendung startfähig.
+
+### Externer Pyti Inspector
+
+Der Pyti Inspector ist ein separates Companion-Projekt und keine
+Pyti-Laufzeitabhängigkeit. Sein Launcher instrumentiert den Interpreter im
+Arbeitsspeicher und sendet JSON-Lines-Telemetrie an einen lokalen Listener.
+Ohne den externen Launcher ändert sich das Verhalten von Pyti nicht. Details,
+Grenzen und Startanleitung stehen in [INSPECTOR.md](INSPECTOR.md).
 
 ### Leveldefinitionen
 

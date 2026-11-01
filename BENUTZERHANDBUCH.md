@@ -131,6 +131,7 @@ möglicherweise nicht sofort beendet werden.
 # 3. Die Benutzeroberfläche
 
 Die Hauptansicht besteht aus einem Spielfeldbereich und einer Seitenleiste.
+Allgemeine Funktionen liegen in der Menüleiste am oberen Fensterrand.
 Die genaue Anordnung kann sich abhängig von Fenstergröße und Betriebssystem
 leicht unterscheiden.
 
@@ -180,17 +181,18 @@ Textdatei. Bei einem Skriptfehler bleibt der Inhalt in der Regel erhalten.
 
 ### Beispiele
 
-**Beispiele** öffnet das mitgelieferte Cookbook aus `EXAMPLES.md`. Es enthält
-kurze Muster für Schleifen, Bedingungen, Funktionen und Klassen. Die
-Beispielansicht ist eine Leseansicht; zum Ausprobieren kopierst du den Code
-manuell in den Editor oder verwendest eine im Admin-Panel gespeicherte Vorlage.
+Wähle in der Menüleiste **Werkzeuge → Beispiele**, um das mitgelieferte
+Cookbook aus `EXAMPLES.md` zu öffnen. Es enthält kurze Muster für Schleifen,
+Bedingungen, Funktionen und Klassen. Die Beispielansicht ist eine Leseansicht;
+zum Ausprobieren kopierst du den Code manuell in den Editor oder verwendest
+eine im Admin-Panel gespeicherte Vorlage.
 
 ### Start und Stopp
 
 - **Start** führt den Text im Editor aus.
 - **Stopp** fordert den Worker zum Abbruch auf. Während eines aktiven Laufs
-  werden Levelauswahl, Editor, Spielfeld und Start gesperrt; Stopp bleibt
-  verfügbar.
+  werden Levelauswahl, Editor, Spielfeld, Start und allgemeine Menüpunkte
+  gesperrt; Stopp bleibt verfügbar.
 
 Während der Ausführung zeigt die Statuszeile, ob das Skript läuft, abgebrochen
 wurde oder beendet ist. Ein erfolgreicher Skriptablauf bedeutet nicht
@@ -199,8 +201,15 @@ Zielprüfung erfolgreich sein.
 
 ### Administration
 
-**Administration** öffnet das lokale Verwaltungsfenster. Die Funktionen sind
-in [Kapitel 9](#9-admin-panel) ausführlich beschrieben.
+Wähle **Werkzeuge → Administration**, um das lokale Verwaltungsfenster zu
+öffnen. Die Funktionen sind in [Kapitel 9](#9-admin-panel) ausführlich
+beschrieben. Der grafische Level-Creator steht unter **Werkzeuge → Eigenes
+Level erstellen** bereit. **Hilfe → Über Pyti** zeigt Projektinformationen
+und Sicherheitshinweise.
+
+Der optionale externe [Pyti Inspector](docs/INSPECTOR.md) kann Skriptzeilen,
+Aktionen, Sensorwerte, Variablen und Roboterzustand anzeigen. Er ist ein
+separates Werkzeug und wird nicht mit Pyti ausgeliefert.
 
 ---
 
@@ -526,7 +535,7 @@ entsprechenden bestehenden Levels in der lokalen Installation.
 
 ### Neue Level mit dem Level-Creator erstellen
 
-Öffne im Hauptfenster **Eigenes Level erstellen**. Der eigenständige Dialog
+Öffne **Werkzeuge → Eigenes Level erstellen**. Der eigenständige Dialog
 enthält eine Vorschau des 15×15-Spielfelds und speichert mehrere Entwürfe
 automatisch im lokalen Anwendungskonfigurationsordner. Name und Mission
 können im Dialog bearbeitet werden.
@@ -619,7 +628,7 @@ kein dauerhaftes Fehlerprotokoll und bietet keinen interaktiven Debugger.
 
 ## Öffnen und Zweck
 
-Klicke im Hauptfenster auf **Administration**. Das Admin-Panel ist für die
+Öffne **Werkzeuge → Administration**. Das Admin-Panel ist für die
 lokale Verwaltung der Lernumgebung vorgesehen. Es benötigt kein Passwort und
 ist keine Sicherheitsgrenze gegenüber anderen Benutzern des Computers.
 

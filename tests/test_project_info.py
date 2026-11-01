@@ -4,7 +4,7 @@ from pathlib import Path
 
 os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
 
-from PySide6.QtWidgets import QApplication, QPushButton, QTextBrowser
+from PySide6.QtWidgets import QApplication, QMenuBar, QPushButton, QTextBrowser
 
 from pyti_app.project_info import erstelle_projektinfo_dialog
 from pyti_app.ui_builder import baue_ui
@@ -35,13 +35,34 @@ class ProjektinfoTests(unittest.TestCase):
         self.assertTrue(browser.openExternalLinks())
         dialog.close()
 
-    def test_hauptfenster_bietet_ueber_pyti_knopf(self):
+    def test_hauptfenster_bietet_allgemeine_aktionen_in_menues(self):
         root = Path(__file__).resolve().parents[1]
         widgets = baue_ui(root, [])
         try:
-            self.assertIsInstance(widgets.about_button, QPushButton)
-            self.assertEqual(widgets.about_button.text(), "Über Pyti")
-            self.assertTrue(widgets.about_button.isVisibleTo(widgets.window))
+            menu_bar = widgets.window.findChild(QMenuBar)
+            self.assertIsNotNone(menu_bar)
+            self.assertEqual(
+                [action.text() for action in menu_bar.actions()],
+                ["Werkzeuge", "Hilfe"],
+            )
+            self.assertEqual(
+                [action.text() for action in widgets.menus[0].actions()],
+                ["Beispiele", "Administration", "Eigenes Level erstellen"],
+            )
+            self.assertEqual(
+                [action.text() for action in widgets.menus[1].actions()],
+                ["Über Pyti"],
+            )
+            self.assertIs(widgets.about_action, widgets.menus[1].actions()[0])
+            self.assertFalse(
+                any(
+                    button.text() in {
+                        "Beispiele", "Administration",
+                        "Eigenes Level erstellen", "Über Pyti",
+                    }
+                    for button in widgets.window.findChildren(QPushButton)
+                )
+            )
         finally:
             widgets.window.close()
 
